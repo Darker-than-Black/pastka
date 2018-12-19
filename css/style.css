@@ -134,7 +134,7 @@ body {
 }
 @media only screen and (min-width: 1024px) {
   .wrapper {
-    height: 100vh;
+    min-height: 100vh;
   }
 }
 
@@ -243,6 +243,12 @@ body {
   margin: 4% 2rem 2%;
   font-size: 2.5rem;
 }
+@media only screen and (max-width: 576px) {
+  .title {
+    font-size: 1.25rem;
+    margin: 5% .5rem 3%;
+  }
+}
 .title__form {
   font-weight: bold;
   font-size: 3.25rem;
@@ -255,30 +261,58 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .billboard {
-  position: absolute;
+  width: 100%;
   bottom: 0;
   left: 3%;
-  width: 55.25%;
-  height: 76.5%;
-  background-image: url("../img/billboard.png");
+  height: 73vh;
+  background-image: url("../img/billboard_mobile.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
 }
+@media screen and (min-width: 1270px) {
+  .billboard {
+    height: 76.5%;
+    position: absolute;
+    width: 55.25%;
+    background-image: url("../img/billboard.png");
+  }
+}
+@media only screen and (max-width: 576px) {
+  .billboard {
+    height: 40vh;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .billboard {
+    height: 53vh;
+  }
+}
 
 .contact-form {
-  width: 41.75%;
-  position: absolute;
+  width: 100%;
   bottom: 0;
   right: 0;
   height: 66.5%;
+  margin-top: -15%;
 }
 @media screen and (max-width: 1400px) {
   .contact-form {
     height: 76.5%;
+  }
+}
+@media only screen and (min-width: 1270px) {
+  .contact-form {
+    width: 41.75%;
+    position: absolute;
+    margin-top: 0;
   }
 }
 .contact-form form {
@@ -299,12 +333,26 @@ body {
   -webkit-box-shadow: 0px 0px 2rem 0.3rem rgba(5, 48, 222, 0.75), 0px 0px 2rem 0.3rem rgba(5, 48, 222, 0.75) inset;
           box-shadow: 0px 0px 2rem 0.3rem rgba(5, 48, 222, 0.75), 0px 0px 2rem 0.3rem rgba(5, 48, 222, 0.75) inset;
 }
+@media only screen and (max-width: 576px) {
+  .contact-form form label {
+    margin: .75rem .25rem;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
 .contact-form form svg {
   width: 2.75rem;
   height: 2.75rem;
   margin: .5rem 1.25rem;
   -webkit-filter: drop-shadow(0px 0px 1rem rgba(30, 132, 242, 0.92));
           filter: drop-shadow(0px 0px 1rem rgba(30, 132, 242, 0.92));
+}
+@media only screen and (max-width: 576px) {
+  .contact-form form svg {
+    margin: .25rem .5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 .contact-form form input,
 .contact-form form button {
@@ -314,10 +362,17 @@ body {
   border: none;
   background: none;
 }
+@media only screen and (max-width: 576px) {
+  .contact-form form input,
+  .contact-form form button {
+    width: 70%;
+    font-size: 1.25rem;
+  }
+}
 .contact-form form button {
   cursor: pointer;
   font-size: 1.25rem;
-  margin: 1.75rem 2rem;
+  margin: 1.75rem 2rem 3.5rem;
   color: #beefff;
   text-shadow: 0px 0px 8px #1e84f2;
   padding: .75rem 1.75rem;
